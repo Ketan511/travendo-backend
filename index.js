@@ -24,7 +24,7 @@ const app=express();
 
 
 Connection();
-app.listen(PORT,()=>console.log(`Server is successfully running on PORT ${PORT}`));
+
 // DefaultData();
 
 
@@ -32,6 +32,7 @@ app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use('/', Routes);
+app.listen(PORT,()=>console.log(`Server is successfully running on PORT ${PORT}`));
 
 export let paytmMerchantkey = process.env.PAYTM_MERCHANT_KEY;
 export let paytmParams = {};
